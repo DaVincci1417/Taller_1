@@ -1,7 +1,5 @@
 package Model;
 
-import java.security.cert.PKIXParameters;
-
 public class Computador extends DispositivoTecnologico{
     private String tarjetaVideo;
     private String fuentePoder;
@@ -10,12 +8,47 @@ public class Computador extends DispositivoTecnologico{
 
     public Computador(String marca, String memoriaRam, String memoriaAlmacenamiento,
                       String procesador, String modelo, String añoFabricacion, String precio,
-                      int cantidadStock, String tarjetaVideo, String fuentePoder, String chasis, Pantalla pantallaAsociada){
+                      String cantidadStock, String tarjetaVideo, String fuentePoder, String chasis, Pantalla pantallaAsociada){
         super(marca, memoriaRam, memoriaAlmacenamiento, procesador, modelo, añoFabricacion, precio, cantidadStock);
         setTarjetaVideo(tarjetaVideo);
         setFuentePoder(fuentePoder);
         setChasis(chasis);
         setPantallaAsociada(pantallaAsociada);
+    }
+
+    //Obtener informacion especifica de un dispositivo
+
+
+    @Override
+    public String obtenerInformacion(String informacionRequerida){
+        switch (informacionRequerida){
+            case "marca":
+                return getMarca();
+            case "memoriaRam":
+                return getMemoriaRam();
+            case "memoriaAlmacenamiento":
+                return getMemoriaAlmacenamiento();
+            case "procesador":
+                return getProcesador();
+            case "modelo":
+                return getModelo();
+            case "añoFabricacion":
+                return getAñoFabricacion();
+            case "precio":
+                return getPrecio();
+            case "cantidadStock":
+                return getCantidadStock();
+            case "tarjetaVideo":
+                return getTarjetaVideo();
+            case "fuentePoder":
+                return getFuentePoder();
+            case "chasis":
+                return getChasis();
+            case "pantallaAsociada":
+                return getPantallaAsociada().getModelo();
+            default:System.out.println("Ingrese una opcion valida");
+        }
+        return null;
     }
 
     //Get Tipo

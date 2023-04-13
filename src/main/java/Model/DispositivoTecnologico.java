@@ -8,11 +8,11 @@ public abstract class DispositivoTecnologico{
     protected String modelo;
     protected String añoFabricacion;
     protected String precio;
-    protected int cantidadStock;
+    protected String cantidadStock;
 
     public DispositivoTecnologico(String marca, String memoriaRam, String memoriaAlmacenamiento,
                                   String procesador, String modelo, String añoFabricacion, String precio,
-                                  int cantidadStock){
+                                  String cantidadStock){
         setMarca(marca);
         setMemoriaRam(memoriaRam);
         setMemoriaAlmacenamiento(memoriaAlmacenamiento);
@@ -23,7 +23,10 @@ public abstract class DispositivoTecnologico{
         setCantidadStock(cantidadStock);
     }
 
+    public abstract String obtenerInformacion(String informacionRequerida);
+
     public abstract String getTipo();
+
 
     //Getters
     public String getMarca() {
@@ -47,7 +50,7 @@ public abstract class DispositivoTecnologico{
     public String getPrecio() {
         return precio;
     }
-    public int getCantidadStock() {
+    public String getCantidadStock() {
         return cantidadStock;
     }
 
@@ -73,7 +76,7 @@ public abstract class DispositivoTecnologico{
     private void setPrecio(String precio) {
         this.precio = precio;
     }
-    private void setCantidadStock(int cantidadStock) {
+    private void setCantidadStock(String cantidadStock) {
         this.cantidadStock = cantidadStock;
     }
 }

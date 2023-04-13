@@ -56,4 +56,13 @@ public class Cliente {
     private void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
+
+    //Validar numero contacto
+    public void validarNumeroContacto(String numeroContacto){
+        try{
+            Integer.parseInt(numeroContacto);
+        }catch (Exception e){
+            System.out.println("Ha ingresado un numero incorrecto.");
+        }
+    }
 }

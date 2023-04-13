@@ -7,11 +7,41 @@ public class Notebook extends DispositivoTecnologico{
 
     public Notebook(String marca, String memoriaRam, String memoriaAlmacenamiento,
                       String procesador, String modelo, String añoFabricacion, String precio,
-                      int cantidadStock, String resolucionPantalla, String tecladoIntegrado, String bateria){
+                      String cantidadStock, String resolucionPantalla, String tecladoIntegrado, String bateria){
         super(marca, memoriaRam, memoriaAlmacenamiento, procesador, modelo, añoFabricacion, precio, cantidadStock);
         setResolucionPantalla(resolucionPantalla);
         setTecladoIntegrado(tecladoIntegrado);
         setBateria(bateria);
+    }
+
+    @Override
+    public String obtenerInformacion(String informacionRequerida) {
+        switch (informacionRequerida){
+            case "marca":
+                return getMarca();
+            case "memoriaRam":
+                return getMemoriaRam();
+            case "memoriaAlmacenamiento":
+                return getMemoriaAlmacenamiento();
+            case "procesador":
+                return getProcesador();
+            case "modelo":
+                return getModelo();
+            case "añoFabricacion":
+                return getAñoFabricacion();
+            case "precio":
+                return getPrecio();
+            case "cantidadStock":
+                return getCantidadStock();
+            case "resolucionPantalla":
+                return getResolucionPantalla();
+            case "tecladoIntegrado":
+                return getTecladoIntegrado();
+            case "bateria":
+                return getBateria();
+            default:System.out.println("Ingrese una opcion valida");
+        }
+        return null;
     }
 
     //Get Tipo
