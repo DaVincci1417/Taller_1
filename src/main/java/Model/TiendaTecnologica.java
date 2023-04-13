@@ -12,6 +12,11 @@ public class TiendaTecnologica{
         setDireccion(direccion);
     }
 
+    //Agregar dispositivosTecnologicos
+    public void agregarDispositivosTecnologicos(DispositivoTecnologico dispositivoTecnologico){
+        dispositivoTecnologicos.add(dispositivoTecnologico);
+    }
+
     //Metodos que buscan dispositvos tecnologicoss segun tipo, marca o modelo.
     public ArrayList<DispositivoTecnologico> buscarProductosSegunTipo(String tipo) {
         ArrayList<DispositivoTecnologico> productosDeLaCategoria = new ArrayList<>();
